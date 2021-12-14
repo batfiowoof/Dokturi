@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\notify.min.js" />
+    <Content Remove="wwwroot\js\script-custom-calendar - Copy.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\script-custom-calendar - Copy.js" />
+    <None Include="wwwroot\js\notify.min.js" />
     <None Include="wwwroot\js\site.js" />
   </ItemGroup>
 
