@@ -13,5 +13,6 @@ namespace WebApplication7.Models
         {
 
         }
+        public DbSet<Appointment> Appointments { get; set; }
     }
 }

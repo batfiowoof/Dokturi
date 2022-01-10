@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication7.Services;
+using WebApplication7.Utility;
 
 namespace WebApplication7.Controllers
 {
@@ -17,7 +18,9 @@ namespace WebApplication7.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.Duration = Helper.GetTimeDropDown();
             ViewBag.DoctorList=_appointmentService.GetDoctorList();
+            ViewBag.PatientList = _appointmentService.GetPatientList();
             return View();
         }
     }

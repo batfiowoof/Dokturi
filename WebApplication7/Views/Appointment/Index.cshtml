@@ -1,4 +1,6 @@
-﻿<div class="container">
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+<div class="container">
     @if (User.IsInRole(WebApplication7.Utility.Helper.Admin))
             {
                 <div class="row">
@@ -19,3 +21,8 @@
             }
     <div id="calendar"></div>
 </div>
+<partial name="_AddEditAppointment" />
+
+@section Scripts{
+<script src="~/js/script-custom-calendar - Copy.js"></script>
+}

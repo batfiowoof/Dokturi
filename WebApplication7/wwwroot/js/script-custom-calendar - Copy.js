@@ -1,4 +1,4 @@
-﻿var routeURL = location.protocol + "//" + location.host;
+﻿/*var routeURL = location.protocol + "//" + location.host;
 $(document).ready(function () {
     $("#appointmentDate").kendoDateTimePicker({
         value: new Date(),
@@ -6,12 +6,20 @@ $(document).ready(function () {
     });
 
     InitializeCalendar();
+});*/
+
+var routeURL = location.protocol + "//" + location.host;
+$(document).ready(function () {
+    $("#appointmentDate").kendoDateTimePicker({
+        value: new Date(),
+        dateInput: false,
+        format: "dd/MM/yyyy HH:mm:ss" // I have researched this and added this in myself which works for my region.
+    });
+    InitializeCalendar();
 });
 var calendar;
 function InitializeCalendar() {
     try {
-
-
         var calendarEl = document.getElementById('calendar');
         if (calendarEl != null) {
             calendar = new FullCalendar.Calendar(calendarEl, {
@@ -21,6 +29,7 @@ function InitializeCalendar() {
                     center: 'title',
                     right: 'dayGridMonth,timeGridWeek,timeGridDay'
                 },
+                // timeZone: 'GMT +2',
                 selectable: true,
                 editable: false,
                 select: function (event) {
@@ -68,7 +77,6 @@ function InitializeCalendar() {
     }
 
 }
-
 
 function onShowModal(obj, isEventDetail) {
     if (isEventDetail != null) {
